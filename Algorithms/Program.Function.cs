@@ -8,6 +8,7 @@ namespace Algorithms
 {
     partial class Program
     {
+        #region Algorithm Array Store & Print:
         static void storeAndPrint() 
         {
 
@@ -37,6 +38,7 @@ namespace Algorithms
             }
             return;
         }
-          
+        #endregion
+
     }
 }
