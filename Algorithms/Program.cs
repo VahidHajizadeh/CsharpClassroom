@@ -1,2 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace Algorithms
+{
+    partial class Program
+    {
+        static void Main(string[] args)
+        {
+            storeAndPrint();
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
