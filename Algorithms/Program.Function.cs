@@ -9,16 +9,16 @@ namespace Algorithms
     partial class Program
     {
         #region Algorithm Array Store & Print:
-        static void storeAndPrint() 
+        static void storeAndPrint()
         {
 
             int[] number = new int[10];
             Console.WriteLine("Input 10 elements in the array: ");
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Console.Write($"element - {i} : ");
                 string input = Console.ReadLine()!;
-                
+
 
                 if (int.TryParse(input, out int numbers))
                 {
@@ -39,6 +39,74 @@ namespace Algorithms
             return;
         }
         #endregion
+        #region Array Copy & Frequency of_Array Elements:
+        /// <summary>
+        /// Reads a set of numbers from the user, stores them in the first array,
+        /// copies all elements into a second array, and prints both arrays.
+        /// </summary>
+        static void Array_Copy()
+        {
+            Console.Write("Input the number of elements to be stored in the array: ");
+            int number = int.Parse(Console.ReadLine());
 
+            int[] firtArray = new int[number];
+            int[] secondArray = new int[number];
+
+            for (int i = 0; i < number; i++)
+            {
+                Console.Write($"Enter number {i + 1}: ");
+                firtArray[i] = int.Parse(Console.ReadLine());
+            }
+
+            Array.Copy(firtArray, secondArray, number);
+
+            Console.Write("The elements stored in the first array are: ");
+            for (int i = 0; i < number; i++)
+            {
+                Console.Write(firtArray[i] + " ");
+            }
+
+            Console.Write("\nThe elements copied into the second array are: ");
+            for (int i = 0; i < number; i++)
+            {
+                Console.Write(secondArray[i] + " ");
+            }
+        }
+
+
+
+        /// <summary>
+        /// Reads numbers from the user, stores them in an array,
+        /// and prints how many times each number occurs in the array.
+        /// </summary>
+        static void Frequency_of_Array_Elements()
+        {
+            Console.Write("Input the number of elements to be stored in the array: ");
+            int number = int.Parse(Console.ReadLine());
+
+            int[] numberArr = new int[number];
+
+            for (int i = 0; i < number; i++)
+            {
+                Console.Write($"Enter number{i + 1} : ");
+                numberArr[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("\nThe frequency of all elements of an array:");
+            for (int i = 0; i < number; i++)
+            {
+                int count = 0;
+
+                for (int j = 0; j < number; j++)
+                {
+                    if (numberArr[i] == numberArr[j])
+                    {
+                        count++;
+                    }
+                }
+                Console.WriteLine($"{numberArr[i]} occurs {count} times");
+            }
+        }
+        #endregion
     }
 }
