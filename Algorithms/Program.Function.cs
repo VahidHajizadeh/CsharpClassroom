@@ -39,6 +39,17 @@ namespace Algorithms
             return;
         }
         #endregion
+        #region Algorithm Array for reversing :
+        static void ArrayReverser(int[] numbers) 
+        {
+            for (int i = numbers.Length - 1 ; i >0; i--)
+            {
+                Console.WriteLine(":" +numbers[i]);
+            }
+        
+        }
 
+
+        #endregion
     }
 }
