@@ -8,7 +8,8 @@
             storeAndPrint();
 
             ArrayReverser(nums);
-
+            Array_Copy();
+            Frequency_of_Array_Elements();
             Console.ReadKey();
         }
     }
