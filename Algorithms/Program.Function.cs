@@ -94,6 +94,71 @@ namespace Algorithms
         }
         #endregion
 
+        #region Algorithm Find Maximum & Minimum:
+
+        static void MaximumAndMinimum()
+        {
+            // Input:
+            int[] numbers = new int[3];
+            int i = 0;
+            while (i < numbers.Length)
+            {
+                Console.Write($"element - {i}: ");
+                numbers[i] = int.Parse(Console.ReadLine()!);
+                i++;
+            }
+
+            /*
+                // Test:
+                int res = numbers[0];
+                if (res < numbers[1])
+                {
+                    res = numbers[1];
+                }
+                if (res < numbers[2])
+                {
+                    res = numbers[2];
+                }
+                Console.WriteLine(res); 
+            */
+
+
+            int max = numbers[0];
+            int min = numbers[0];
+            int j = 1;
+            while (j < numbers.Length)
+            {
+                max = (numbers[j] > max) ? numbers[j] : max;
+                min = (numbers[j] < min) ? numbers[j] : min;
+                j++;
+            }
+            Console.WriteLine("Max: " + max);
+            Console.WriteLine("Min: " + min);
+
+
+            /*
+                // Fail code:
+                int c = 0;
+                int max = 0;
+                while(c < numbers.Length)
+                {
+                    int j = 0;
+                    while(j < c)
+                    {
+                        max = (numbers[c] > numbers[j]) ? numbers[c] : numbers[j];
+                        //int min = (numbers[i] < numbers[j]) ? numbers[i] : numbers[j];
+                        j++;
+                        //Console.WriteLine("Min: " + min);
+                    }
+                    c++;
+                }
+                Console.WriteLine("Max: " + max);
+             */
+
+        }
+
+        #endregion
+
 
         #region Algorithm Array for reversing :
         static void ArrayReverser(int[] numbers)
