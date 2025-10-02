@@ -8,7 +8,12 @@ namespace Algorithms
 {
     partial class Program
     {
+
         #region Algorithm Array Store & Print:
+        /// <summary>
+        /// Wrote a program to store elements in an array and print them.
+        /// And it takes 10 numbers from the user.
+        /// </summary>
         static void storeAndPrint()
         {
 
@@ -39,6 +44,122 @@ namespace Algorithms
             return;
         }
         #endregion
+
+        #region Algorithm Count Duplicate Elements:
+        /// <summary>
+        /// I wrote a program that counts the total number of duplicate elements in an array.
+        /// And prints the duplicate elements.
+        /// </summary>
+        static void countDuplicateElements()
+        {
+            int[] myArray = new int[3];
+            //{
+            //    int.Parse(Console.ReadLine()!),
+            //    int.Parse(Console.ReadLine()!),
+            //    int.Parse(Console.ReadLine()!),
+            //};
+
+            // Input:
+            for (int c = 0; c < myArray.Length; c++)
+            {
+                Console.Write($"element - {c}: ");
+                myArray[c] = int.Parse(Console.ReadLine()!);
+            }
+
+
+            // Check for duplicate elements in the array
+            // And print the first occurrence of each duplicate:
+            int count = 1;
+            bool check = true;
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (myArray[i] == myArray[j])
+                    {
+                        count++;
+                        //Console.WriteLine($"{myArray[i]} Duplicate: {count}");
+
+                        //check = true;
+                        if (check)
+                        {
+                            Console.WriteLine("Total number of duplicate elements found in the array is: {0}", myArray[i]);
+                            check = false;
+                        }
+                        break;
+                    }
+                }
+            }
+
+        }
+        #endregion
+
+        #region Algorithm Find Maximum & Minimum:
+
+        static void MaximumAndMinimum()
+        {
+            // Input:
+            int[] numbers = new int[3];
+            int i = 0;
+            while (i < numbers.Length)
+            {
+                Console.Write($"element - {i}: ");
+                numbers[i] = int.Parse(Console.ReadLine()!);
+                i++;
+            }
+
+            /*
+                // Test:
+                int res = numbers[0];
+                if (res < numbers[1])
+                {
+                    res = numbers[1];
+                }
+                if (res < numbers[2])
+                {
+                    res = numbers[2];
+                }
+                Console.WriteLine(res); 
+            */
+
+
+            int max = numbers[0];
+            int min = numbers[0];
+            int j = 1;
+            while (j < numbers.Length)
+            {
+                max = (numbers[j] > max) ? numbers[j] : max;
+                min = (numbers[j] < min) ? numbers[j] : min;
+                j++;
+            }
+            Console.WriteLine("Max: " + max);
+            Console.WriteLine("Min: " + min);
+
+
+            /*
+                // Fail code:
+                int c = 0;
+                int max = 0;
+                while(c < numbers.Length)
+                {
+                    int j = 0;
+                    while(j < c)
+                    {
+                        max = (numbers[c] > numbers[j]) ? numbers[c] : numbers[j];
+                        //int min = (numbers[i] < numbers[j]) ? numbers[i] : numbers[j];
+                        j++;
+                        //Console.WriteLine("Min: " + min);
+                    }
+                    c++;
+                }
+                Console.WriteLine("Max: " + max);
+             */
+
+        }
+
+        #endregion
+
+
         #region Algorithm Array for reversing :
         static void ArrayReverser(int[] numbers)
         {
