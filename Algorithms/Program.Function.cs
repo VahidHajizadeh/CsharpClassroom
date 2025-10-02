@@ -242,5 +242,48 @@ namespace Algorithms
             }
         }
         #endregion
+
+        #region Insert In Unsorted Array:
+        /// <summary>
+        /// Inserts a new element at a given position in an unsorted array.
+        /// </summary>
+        static void Insert_In_Unsorted_Array()
+        {
+            Console.Write("input the size of array: ");
+            int size = int.Parse(Console.ReadLine());
+            int[] arr = new int[size + 1];
+
+            for (int i = 0; i < size; i++)
+            {
+                Console.Write($"input element {i + 1} in the array:");
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("array list is:");
+            for (int i = 0; i < size; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+
+            Console.Write("Input the value to be inserted: ");
+            int value = int.Parse(Console.ReadLine());
+
+            Console.Write("Input the position, where the value to be inserted: ");
+            int position = int.Parse(Console.ReadLine());
+
+            for (int i = size; i > position; i--)
+            {
+                arr[i] = arr[i - 1];
+            }
+
+            arr[position] = value;
+
+            Console.WriteLine("After Insert the element the new list is:");
+            for (int i = 0; i <= size; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+        }
+        #endregion
     }
 }

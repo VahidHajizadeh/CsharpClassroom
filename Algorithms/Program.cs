@@ -13,6 +13,7 @@
             ArrayReverser(nums);
             Array_Copy();
             Frequency_of_Array_Elements();
+            Insert_In_Unsorted_Array();
             Console.ReadKey();
         }
     }
