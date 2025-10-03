@@ -259,14 +259,14 @@ namespace Algorithms
                     p = i + 1;
                 }
             }
-            
+
             for (int i = input; i >= p; i--)
             {
                 numbers[i + 1] = numbers[i];
             }
-            
+
             numbers[p] = input2;
-            
+
 
             Console.Write("After Insert the list is : ");
             for (int i = 0; i <= input; i++)
@@ -405,5 +405,180 @@ namespace Algorithms
             }
         }
         #endregion
+
+        #region AmiraliHeidary
+
+            #region PROJECT 13
+            void p13()
+            {
+                //Write a program in C to insert the values in the array (sorted list).
+                System.Console.WriteLine("enter number");
+                int[] numbers =
+                {
+                                5,
+                                7,
+                                int.Parse(Console.ReadLine()),
+                                int.Parse(Console.ReadLine()),
+                                8,
+                                3,
+                                int.Parse(Console.ReadLine())
+                            };
+                Array.Sort(numbers);
+                System.Console.WriteLine("----------------");
+                foreach (int i in numbers)
+                {
+                    System.Console.WriteLine(i);
+                }
+            }
+            #endregion
+            #region PROJECT 33
+            void p33()
+            {
+                //Write a program in C to find the majority element of an array.
+                int count = 0;
+                int flag = 0;
+                System.Console.WriteLine("enter numbers");
+                int[] numbers =
+                {
+                            int.Parse(Console.ReadLine()),
+                            int.Parse(Console.ReadLine()),
+                            int.Parse(Console.ReadLine()),
+                            int.Parse(Console.ReadLine()),
+                            int.Parse(Console.ReadLine()),
+                            int.Parse(Console.ReadLine())
+                        };
+
+                foreach (int i in numbers)
+                {
+                    count = 0;
+                    foreach (int j in numbers)
+                    {
+                        if (i == j)
+                        {
+                            count++;
+                            if (count > (numbers.Length / 2))
+                            {
+                                System.Console.WriteLine($"{i} is major");
+                                return;
+                            }
+                            else
+                            {
+                                flag++;
+                                if (flag > (numbers.Length / 2))
+                                {
+                                    System.Console.WriteLine("this array does not have any major");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #endregion
+            #region PROJECT 43
+            void p43()
+            {
+                //Write a program in C to print the next greatest elements in a given unsorted array.
+                //Elements for which no superior element exists, consider the next greatest element as -1. 
+                System.Console.WriteLine("enter numbers");
+                int[] numbers =
+                {
+                            int.Parse(Console.ReadLine()),
+                            int.Parse(Console.ReadLine()),
+                            int.Parse(Console.ReadLine()),
+                            int.Parse(Console.ReadLine()),
+                            int.Parse(Console.ReadLine()),
+                            int.Parse(Console.ReadLine())
+                        };
+                int j = 0;
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    bool check = false;
+                    for (j = i + 1; j < numbers.Length; j++)
+                    {
+                        if (numbers[i] < numbers[j])
+                        {
+                            System.Console.WriteLine($"next great number is {numbers[j]}");
+                            check = true;
+                            break;
+                        }
+
+
+                    }
+
+
+                    if (!check)
+                    {
+                        System.Console.WriteLine("next great number is -1");
+                    }
+                }
+            }
+            #endregion
+            #region PROJECT 53
+            void p53()
+            {
+                //Write a program in C to find the number of times a given number appears in an array. 
+                System.Console.WriteLine("enter array numbers");
+                int[] numbers =
+                {
+                        int.Parse(Console.ReadLine()),
+                        int.Parse(Console.ReadLine()),
+                        int.Parse(Console.ReadLine()),
+                        int.Parse(Console.ReadLine()),
+                        int.Parse(Console.ReadLine()),
+                        int.Parse(Console.ReadLine())
+                    };
+
+                System.Console.WriteLine("enter your number");
+
+                int input = int.Parse(Console.ReadLine());
+                int count = 0;
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    if (numbers[i] == input)
+                    {
+                        count++;
+                    }
+                }
+
+                System.Console.WriteLine($"number {input} has reapeted {count} times");
+            }
+            #endregion
+            #region PROJECT 73
+            void p73()
+            {
+                //Write a program in C to print all unique elements of an unsorted array.
+                System.Console.WriteLine("enter numbers");
+                int[] numbers =
+                {
+                    int.Parse(Console.ReadLine()),
+                    int.Parse(Console.ReadLine()),
+                    int.Parse(Console.ReadLine()),
+                    int.Parse(Console.ReadLine())
+                    };
+                int[] snum = new int[numbers.Length];
+                Array.Copy(numbers, 0, snum, 0, numbers.Length);
+                int count = 0;
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    count = 0;
+                    for (int q = 0; q < numbers.Length; q++)
+                    {
+                        if (numbers[i] == snum[q])
+                        {
+                            count++;
+                        }
+                    }
+                    if (count == 1)
+                    {
+                        System.Console.WriteLine($"{numbers[i]} is uniqe");
+                    }
+                }
+            }
+            #endregion
+
+        #endregion
     }
+    
+    
 }
