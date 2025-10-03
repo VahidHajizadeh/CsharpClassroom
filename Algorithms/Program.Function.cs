@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Algorithms
 {
@@ -159,6 +161,124 @@ namespace Algorithms
 
         #endregion
 
+        #region Algorithm Insert in Sorted Array
+
+        static void Ascending()
+        {
+            // Method 1: Failed
+            /*
+            int[] numbers = new int[5];
+
+            for (int i = 0; i < 4; i++)
+            {
+                Console.Write($"element - {i}: ");
+                numbers[i] = int.Parse(Console.ReadLine()!);
+            }
+
+            int first = 0;
+            while (first < 4)
+            {
+                Console.WriteLine(
+                    "The existing array list is: " +
+                    numbers[first]);
+                first++;
+            }
+
+            for (int i = 4; i < 5; i++)
+            {
+                Console.Write($"Input the value to be inserted: ");
+                numbers[i] = int.Parse(Console.ReadLine()!);
+            }
+
+            int second = 0;
+            while (second < numbers.Length)
+            {
+                int third = 0;
+                while (third < second)
+                {
+                    if (numbers[second] < numbers[third])
+                    {
+                        Console.Write("After Insert the list is: "); 
+                        int p = 0;
+                        while (p < 3)
+                        {
+                            Console.Write(
+                                numbers[p]
+                                );
+                            p++;
+                        }
+                        Console.Write(numbers[second]);
+                        Console.Write(numbers[third]);
+                    }
+                    third++;
+                }
+                //Console.WriteLine(
+                //    "After Insert the list is: " +
+                //    numbers[second]);
+                second++;
+            }
+            */
+
+            // Method 2:
+
+            int[] numbers = new int[100 + 1];
+
+
+            int input = int.Parse(Console.ReadLine()!);
+            if (input > 100)
+            {
+                Console.WriteLine("0 - 100: Error");
+                return;
+            }
+
+            for (int i = 0; i < input; i++)
+            {
+                Console.Write($"element - {i}: ");
+                numbers[i] = int.Parse(Console.ReadLine()!);
+            }
+
+            Console.Write("Input the value to be inserted : ");
+            int input2 = int.Parse(Console.ReadLine()!);
+
+            Console.Write("The existing array list is: ");
+            for (int i = 0; i < input; i++)
+            {
+                Console.Write(numbers[i]);
+            }
+            Console.WriteLine();
+            int p = 0;
+            for (int i = 0; i < input; i++)
+            {
+                if (input2 < numbers[i])
+                {
+                    p = i;
+                    break;
+                }
+                else
+                {
+                    p = i + 1;
+                }
+            }
+            
+            for (int i = input; i >= p; i--)
+            {
+                numbers[i + 1] = numbers[i];
+            }
+            
+            numbers[p] = input2;
+            
+
+            Console.Write("After Insert the list is : ");
+            for (int i = 0; i <= input; i++)
+            {
+                Console.Write(numbers[i]);
+            }
+            Console.WriteLine();
+
+            return;
+        }
+
+        #endregion
 
         #region Algorithm Array for reversing :
         static void ArrayReverser(int[] numbers)
