@@ -575,9 +575,57 @@ namespace Algorithms
                     }
                 }
             }
-            #endregion
+        #endregion
 
         #endregion
 
+        #region Algorithm Second Smallest Element:
+
+        static void findSecondSmallest()
+        {
+            // Array
+            int[] myNumbers = new int[5];
+
+            // Input
+            int input = 0;
+            while(input <= 3)
+            {
+                Console.Write($"element - {input}: ");
+                myNumbers[input] = int.Parse(Console.ReadLine()!);
+                input++;
+            };
+
+            myNumbers[4] = 9999;
+
+            // Find Minimum Number
+            int min = myNumbers[0];
+            int j = 1;
+            while(j < myNumbers.Length)
+            {
+                min = myNumbers[j] < min ? myNumbers[j] : min;
+                j++;
+            }
+
+            // Find Second Minimum Number
+            int i = 0;
+            int min2 = myNumbers[4];
+            while(i < myNumbers.Length)
+            {
+                if (myNumbers[i] > min && min2 > myNumbers[i])
+                {
+                    min2 = myNumbers[i];
+
+                }
+                i++;
+            }
+            // Print
+            Console.WriteLine("Min number: " + min);
+            Console.WriteLine(
+                "The Second smallest element in the array is: " 
+                + min2);
+
+            return;
+        }
+        #endregion
     }
 }
