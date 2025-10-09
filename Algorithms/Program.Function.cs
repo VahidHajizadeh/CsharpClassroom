@@ -575,9 +575,51 @@ namespace Algorithms
                     }
                 }
             }
-            #endregion
+        #endregion
 
         #endregion
 
+        #region Count Duplicate Elements
+        /// <summary>
+        /// This program takes a number of integers from user and store them in array.
+        /// then it checks how many *different* values appare more than once in the array.
+        /// And prints the duplicate elements.
+        /// </summary>
+        static void Couunt_duplicate_elements(string[] args)
+        {
+            Console.WriteLine("input the number of element to be stored in the array: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+
+            Console.WriteLine("input {0} elements in the array:", n);
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("element {0} : ", i);
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+            int duplicate = 0;
+            bool[] visited = new bool[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                if (visited[i])
+                    continue;
+                int count = 1;
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (arr[j] == arr[i])
+                    {
+                        count++;
+                        visited[i] = true;
+                    }
+
+                }
+                if (count > 1)
+                    duplicate++;
+            }
+
+            Console.WriteLine("total number of duplicate in this array: {0}", duplicate);
+        }
+        #endregion
     }
 }
